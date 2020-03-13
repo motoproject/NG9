@@ -9,7 +9,6 @@ import * as Highcharts from 'highcharts';
 export class ChartsComponent implements OnInit {
   @Input() chartDetails: any;
 
-  highcharts: any;
   chartOptions: any;
 
   constructor() { }
@@ -19,8 +18,8 @@ export class ChartsComponent implements OnInit {
   }
 
   mapChartDetails() {
-    this.highcharts = Highcharts;
     this.chartOptions = this.chartDetails;
+    Highcharts.chart('container', this.chartOptions);
   }
 
 }
